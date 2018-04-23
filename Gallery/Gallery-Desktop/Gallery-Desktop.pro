@@ -1,22 +1,15 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-04-22T00:12:21
+# Project created by QtCreator 2018-04-23T18:49:22
 #
 #-------------------------------------------------
 
-QT       += sql
+QT       += core gui
 
-QT       -= gui
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++11
-
-DESTDIR = "Gallery-Core/"
-
-TARGET = Gallery-Core
-TEMPLATE = lib
-
-
-DEFINES += GALLERYCORE_LIBRARY
+TARGET = Gallery-Desktop
+TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
@@ -29,22 +22,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+
 SOURCES += \
-        album.cpp \
-    picture.cpp \
-    databasemanager.cpp \
-    albumdao.cpp \
-    picturedao.cpp \
-    albummodel.cpp \
-    picturemodel.cpp
+        main.cpp \
+        mainwindow.cpp
 
 HEADERS += \
-        album.h \
-        gallery-core_global.h \ 
-    picture.h \
-    databasemanager.h \
-    albumdao.h \
-    picturedao.h \
-    albummodel.h \
-    picturemodel.h
+        mainwindow.h
+
+FORMS += \
+        mainwindow.ui
+
+
+LIBS += -L/home/neeraj/workspace/Qt/QtRemoteGitRepo/Qt/build-Gallery-Desktop_Qt_5_10_1_GCC_64bit-Debug/Gallery-Core/Gallery-Core -lGallery-Core
+
+INCLUDEPATH += $$PWD/../gallery-core
+DEPENDPATH += $$PWD/../gallery-core
 

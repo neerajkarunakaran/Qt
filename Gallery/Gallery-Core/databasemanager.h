@@ -1,6 +1,8 @@
 #ifndef DATABASEMANAGER_H
 #define DATABASEMANAGER_H
 
+#include "albumdao.h"
+#include "picturedao.h"
 
 #include <QString>
 
@@ -13,6 +15,10 @@ class DatabaseManager
 public:
     static DatabaseManager& instance();
     ~DatabaseManager();
+
+public :
+    const AlbumDao albumDao;
+    const PictureDao pictureDao;
 
 protected:
     DatabaseManager(const QString& path_ = DATABASE_FILENAME);

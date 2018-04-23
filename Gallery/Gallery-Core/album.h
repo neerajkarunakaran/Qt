@@ -9,7 +9,7 @@ class GALLERYCORESHARED_EXPORT Album
 {
 
 public:
-    explicit Album(const QString & name_);
+    explicit Album(const QString & name_ = "");
 
     int id()const;
     void setId(const int & id_);

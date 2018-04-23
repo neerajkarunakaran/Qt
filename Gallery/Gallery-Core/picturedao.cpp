@@ -5,8 +5,8 @@
 #include "picturedao.h"
 void PictureDao::init() const
 {
-    if (!mDatabase.tables().contains("pictures")) {
-        QSqlQuery query(mDatabase);
+    if (!_mDatabase.tables().contains("pictures")) {
+        QSqlQuery query(_mDatabase);
         query.exec(QString("CREATE TABLE pictures")
         + " (id INTEGER PRIMARY KEY AUTOINCREMENT, "
         + "album_id INTEGER, "
@@ -14,22 +14,22 @@ void PictureDao::init() const
     }
 }
 
-void PictureDao::addPictureInAlbum(int albumId, Picture &picture) const
+void PictureDao::addPictureInAlbum(int albumId_, Picture &picture_) const
 {
 
 }
 
-void PictureDao::removePicture(int id) const
+void PictureDao::removePicture(int id_) const
 {
 
 }
 
-void PictureDao::removePicturesForAlbum(int albumId) const
+void PictureDao::removePicturesForAlbum(int albumId_) const
 {
 
 }
 
-QVector<Picture *> PictureDao::picturesForAlbum(int albumId) const
+std::unique_ptr<std::vector<std::unique_ptr<Picture>>> PictureDao::picturesForAlbum(int albumId_) const
 {
 
 }

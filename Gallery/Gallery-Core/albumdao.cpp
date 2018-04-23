@@ -25,7 +25,7 @@ void AlbumDao::addAlbum(Album& album_) const
     query.prepare("INSERT INTO albums (name) VALUES (:name)");
     query.bindValue(":name", album_.name());
     query.exec();
-    album.setId(query.lastInsertId().toInt());
+    album_.setId(query.lastInsertId().toInt());
 }
 
 void AlbumDao::updateAlbum(const Album &album_) const
@@ -38,16 +38,17 @@ void AlbumDao::removeAlbum(int id_) const
 
 }
 
-QVector<Album*> AlbumDao::albums() const
+std::unique_ptr<std::vector<std::unique_ptr<Album>>> AlbumDao::albums() const
 {
     QSqlQuery query("SELECT * FROM albums", _mDatabase);
     query.exec();
-    QVector<Album*> list;
+    std::unique_ptr<std::vector<std::unique_ptr<Album>>> list(new std::vector<std::unique_ptr<Album>>());
     while(query.next()) {
-        Album* album = new Album();
+        std::unique_ptr<Album>album(new Album);
         album->setId(query.value("id").toInt());
         album->setName(query.value("name").toString());
-        list.append(album);
+        list->push_back(std::move(album));
     }
     return list;
 }
+

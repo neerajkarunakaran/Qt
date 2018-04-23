@@ -1,9 +1,14 @@
 #ifndef ALBUMDAO_H
 #define ALBUMDAO_H
-#include <QVector>
+#include <memory>
+#include <vector>
 
-class QSqlDatabase;
-class Album;
+#include <QSqlDatabase>
+
+#include "album.h"
+
+//class QSqlDatabase;
+//class Album;
 
 class AlbumDao
 {
@@ -11,11 +16,10 @@ public:
     AlbumDao(QSqlDatabase& database_);
     void init() const;
 
-    void addAlbum(Album &album) const;
-    void addAlbum(Album& album) const;
-        void updateAlbum(const Album& album) const;
-        void removeAlbum(int id) const;
-        QVector<Album*> albums() const;
+    void addAlbum(Album &album_) const;
+    void updateAlbum(const Album& album_) const;
+    void removeAlbum(int id_) const;
+    std::unique_ptr<std::vector<std::unique_ptr<Album>>> albums() const;
 
 private:
     QSqlDatabase& _mDatabase;

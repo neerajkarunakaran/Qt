@@ -7,7 +7,7 @@ Picture::Picture(const QString& filePath_) :
 Picture::Picture(const QUrl& fileUrl_) :
     _mId(-1),
     _mAlbumId(-1),
-    _mFileUrl(fileUrl)
+    _mFileUrl(fileUrl_)
 {
 }
 

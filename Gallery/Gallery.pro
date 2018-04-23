@@ -1,4 +1,5 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-    Gallery-Core
+    Gallery-Core \
+    Gallery-Desktop

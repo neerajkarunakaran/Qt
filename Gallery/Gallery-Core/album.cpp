@@ -23,7 +23,7 @@ QString Album::name() const
     return _mName;
 }
 
-void Album::setName(const QString &name)
+void Album::setName(const QString &name_)
 {
     _mName = name_;
 }
