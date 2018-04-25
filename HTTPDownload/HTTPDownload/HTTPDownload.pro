@@ -1,14 +1,14 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-04-23T18:49:22
+# Project created by QtCreator 2018-04-27T18:54:04
 #
 #-------------------------------------------------
 
-QT       += core gui sql
+QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Gallery-Desktop
+TARGET = HTTPDownload
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -25,39 +25,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp \
-    albumlistwidget.cpp \
-    thumbnailproxymodel.cpp \
-    albumwidget.cpp \
-    picturedelegate.cpp \
-    picturewidget.cpp \
-    gallerywidget.cpp
+        httpwindow.cpp
 
 HEADERS += \
-        mainwindow.h \
-    albumlistwidget.h \
-    thumbnailproxymodel.h \
-    albumwidget.h \
-    picturedelegate.h \
-    picturewidget.h \
-    gallerywidget.h
+        httpwindow.h
 
 FORMS += \
-        mainwindow.ui \
-    albumlistwidget.ui \
-    albumwidget.ui \
-    picturewidget.ui \
-    gallerywidget.ui
-
-RESOURCES += resources.qrc
-
-
-LIBS += ./../../build-Gallery-Desktop_Qt_5_10_1_GCC_64bit-Debug/Gallery-Core/Gallery-Core -lgallery-core
-
-
-INCLUDEPATH += $$PWD/../gallery-core
-DEPENDPATH += $$PWD/../gallery-gore
-
-RESOURCES += \
-    resources.qrc
-
+        httpwindow.ui

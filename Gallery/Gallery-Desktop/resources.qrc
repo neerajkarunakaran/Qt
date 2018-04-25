@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/Images">
+        <file>AlbumAdd.jpeg</file>
+        <file>AlbumDelete.png</file>
+        <file>AlbumEdit.jpeg</file>
+        <file>BackToGallery.png</file>
+        <file>PhotoAdd.png</file>
+        <file>PhotoBackward.jpeg</file>
+        <file>PhotoDelete.png</file>
+        <file>PhotoForward.jpeg</file>
+    </qresource>
+</RCC>
