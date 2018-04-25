@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -25,17 +25,39 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    albumlistwidget.cpp \
+    thumbnailproxymodel.cpp \
+    albumwidget.cpp \
+    picturedelegate.cpp \
+    picturewidget.cpp \
+    gallerywidget.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    albumlistwidget.h \
+    thumbnailproxymodel.h \
+    albumwidget.h \
+    picturedelegate.h \
+    picturewidget.h \
+    gallerywidget.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    albumlistwidget.ui \
+    albumwidget.ui \
+    picturewidget.ui \
+    gallerywidget.ui
+
+RESOURCES += resources.qrc
 
 
-LIBS += -L/home/neeraj/workspace/Qt/QtRemoteGitRepo/Qt/build-Gallery-Desktop_Qt_5_10_1_GCC_64bit-Debug/Gallery-Core/Gallery-Core -lGallery-Core
+LIBS += ./../../build-Gallery-Desktop_Qt_5_10_1_GCC_64bit-Debug/Gallery-Core/Gallery-Core -lgallery-core
+
 
 INCLUDEPATH += $$PWD/../gallery-core
-DEPENDPATH += $$PWD/../gallery-core
+DEPENDPATH += $$PWD/../gallery-gore
+
+RESOURCES += \
+    resources.qrc
 
